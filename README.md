@@ -1,36 +1,133 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Workforce Pulse
 
-## Getting Started
+Workforce Pulse is a modern workforce analytics dashboard that transforms messy HRMS and employee activity data into actionable business insights. The application cleans, normalizes, and combines multiple data sources to help organizations identify productivity patterns, repetitive work, and automation opportunities through an intuitive executive dashboard.
 
-First, run the development server:
+## ✨ Features
+
+- 📊 Executive analytics dashboard
+- 🧹 Data ingestion and normalization
+- 🔗 Employee & activity data integration
+- 📈 Productivity and department insights
+- 🤖 AI-style business assistant
+- 🎯 Automation opportunity ranking
+- 💰 Recoverable hours and cost estimation
+- 👥 Employee performance analysis
+- 📅 Weekly productivity trends
+- 📄 Executive summary export (CSV)
+- ☀️ Light mode styling with dark layout containers
+- 📱 Fully responsive UI
+
+## 🛠️ Tech Stack
+
+- Next.js (App Router)
+- TypeScript
+- Tailwind CSS
+- Ant Design / Ant Design Icons
+- Recharts
+- date-fns
+
+## 📂 Project Structure
+
+```text
+├── app/
+│   ├── page.tsx (Server Component, hydrates the dashboard with pipeline dataset)
+│   ├── layout.tsx
+│   └── globals.css
+├── components/
+│   ├── ai/
+│   │   ├── ChatWindow.tsx
+│   │   ├── ChatInput.tsx
+│   │   ├── ChatMessage.tsx
+│   │   └── SuggestedQuestions.tsx
+│   ├── ui/ (Sleek UI container buttons and inputs)
+│   └── dashboard/ (Charts, Matrix tables, and drawers)
+├── data-pipeline/ (Data processing orchestrator)
+│   ├── loaders/ (CSV/JSON file readers)
+│   ├── normalizers/ (Employee, log, and compensation validators)
+│   ├── join/ (Relationships mapper & metrics compiler)
+│   └── index.ts
+├── lib/
+│   ├── ai/
+│   │   ├── assistant.ts (Local query router)
+│   │   ├── intentMatcher.ts (Keyword-based pattern matching)
+│   │   └── answerGenerator.ts (On-the-fly metric calculation)
+│   └── utils.ts
+├── types/
+└── public/
+    └── data/ (employees.json and activity_logs.csv)
+```
+
+## 🚀 Getting Started
+
+### Clone the repository
+
+```bash
+git clone https://github.com/your-username/workforce-pulse-dashboard.git
+cd workforce-pulse-dashboard
+```
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open **http://localhost:3000** in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📊 Data Processing
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The application reads:
 
-## Learn More
+- `employees.json`
+- `activity_logs.csv`
 
-To learn more about Next.js, take a look at the following resources:
+The data pipeline:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Loads both datasets
+2. Cleans inconsistent values
+3. Normalizes employee records
+4. Normalizes activity logs
+5. Merges both datasets
+6. Generates a single normalized dataset used throughout the application
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 💡 Dashboard Insights
 
-## Deploy on Vercel
+- Recoverable Hours
+- Recoverable Cost
+- Department Analytics
+- App Usage
+- Task Category Analysis
+- Employee Drill-down
+- Weekly Trends
+- Automation Priority Ranking
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🤖 AI Assistant
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The dashboard includes a local AI-style business assistant (Pulse Copilot) that answers workforce-related questions using the normalized dataset. Responses are generated on-the-fly from the processed data without relying on external AI services, making it completely private, fast, and secure with zero API key requirements.
+
+## 📱 Responsive Design
+
+Optimized for:
+
+- Desktop
+- Tablet
+- Mobile
+
+## 🌐 Deployment
+
+The application can be deployed on:
+
+- Vercel
+- Netlify
+- Railway
+- Render
+
+## 📄 License
+
+This project is created for educational and portfolio purposes.
