@@ -116,14 +116,15 @@ export function ChatWindow({ onClose, dataset, filteredData }: ChatWindowProps) 
         ))}
 
         {isLoading && (
-          <div className="flex gap-3 items-start justify-start">
-            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-zinc-100 border border-zinc-250 dark:bg-zinc-900 dark:border-zinc-800 text-zinc-650 dark:text-zinc-400">
-              <RobotOutlined className="text-[14px]" />
+          <div className="flex gap-3 items-start justify-start w-full animate-pulse">
+            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-zinc-200 dark:bg-zinc-800 border border-zinc-250 dark:border-zinc-700 text-zinc-400">
+              <RobotOutlined className="text-[14px] opacity-40" />
             </div>
-            <div className="rounded-2xl rounded-tl-xs bg-white border border-zinc-200 dark:bg-zinc-900 dark:border-zinc-800 px-3.5 py-2 text-xs text-zinc-500 shadow-xs flex items-center gap-1">
-              <span className="h-1.5 w-1.5 bg-zinc-450 dark:bg-zinc-500 rounded-full animate-bounce" />
-              <span className="h-1.5 w-1.5 bg-zinc-450 dark:bg-zinc-500 rounded-full animate-bounce [animation-delay:0.2s]" />
-              <span className="h-1.5 w-1.5 bg-zinc-450 dark:bg-zinc-500 rounded-full animate-bounce [animation-delay:0.4s]" />
+            <div className="flex-1 space-y-2.5 max-w-[80%] bg-white border border-zinc-200 dark:bg-zinc-900 dark:border-zinc-800 rounded-2xl rounded-tl-xs p-3.5 shadow-xs">
+              <div className="h-3.5 bg-zinc-200 dark:bg-zinc-800 rounded-full w-2/3" />
+              <div className="h-3 bg-zinc-100 dark:bg-zinc-850 rounded-full w-full" />
+              <div className="h-3 bg-zinc-100 dark:bg-zinc-850 rounded-full w-5/6" />
+              <div className="h-2.5 bg-zinc-50 dark:bg-zinc-900 rounded-full w-1/2" />
             </div>
           </div>
         )}
